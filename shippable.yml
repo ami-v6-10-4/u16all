@@ -9,6 +9,7 @@ services:
   - postgres #9.5
   - rabbitmq #3.6.15
   - redis  #4.0.11
+  - riak #2.2.3
   - selenium #3.14.0 
   - sqlite #3.11.0
 
@@ -45,6 +46,7 @@ build:
     - java -jar /usr/local/selenium/selenium-server-standalone-3.14.0.jar --version #3.14.0 
     - sqlite3 --version #3.11.0
     - psql --version #9.5
+    - riak version #2.2.3
     - redis-server --version ##4.0.11
     - dpkg -s rabbitmq-server | grep Version #3.6.15
     - mongod --version #4.0.3 
