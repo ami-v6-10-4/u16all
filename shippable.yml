@@ -5,6 +5,7 @@ services:
   - elasticsearch #6.2.4
   - memcached #1.5.11 
   - mongodb #4.0.3 
+  - mysql #5.7.23
   - postgres #9.5
   - rabbitmq #3.6.15
   - redis  #4.0.11
@@ -39,6 +40,8 @@ build:
     - echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
     - memcached -V #1.5.11 
     - which sqlite3 #|| true
+    - which mysql 
+    - mysql -V #|| true #5.7.23
     - java -jar /usr/local/selenium/selenium-server-standalone-3.14.0.jar --version #3.14.0 
     - sqlite3 --version #3.11.0
     - psql --version #9.5
